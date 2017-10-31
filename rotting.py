@@ -10,11 +10,9 @@ for i in range(len_alphabet):
     for c in n:
         if c.isalpha():
             if c.isupper(): # Uppercase letters
-                l = chr((ord(c)-ord('A')+i)%len_alphabet+ord('A'))
-                print(l, end = "")
+                print(chr((ord(c)-ord('A')+i)%len_alphabet+ord('A')), end = "")
             else: # Lowercase letters
-                l = chr((ord(c)-ord('a')+i)%len_alphabet+ord('a'))
-                print(l, end = "")
+                print(chr((ord(c)-ord('a')+i)%len_alphabet+ord('a')), end = "")
         else: # Not alpha. (Thus might be numeric)
             print(c, end = "")
     print() # include a newline for readability
