@@ -12,10 +12,11 @@ for i in range(len_alphabet):
 	# so find alpha chars first and only change those.
 	# but then we have to decide if it's upper or lower case
         if c.isalpha():
-            if c.isupper(): # Uppercase letters
-                print(chr((ord(c)-ord('A')+i)%len_alphabet+ord('A')), end = "")
-            else: # Lowercase letters
-                print(chr((ord(c)-ord('a')+i)%len_alphabet+ord('a')), end = "")
+            # rather than working out if it's upper or lower case we can just calculate the change required
+            # that way it works for either!
+            offset = ord(c.lower())-ord('a')
+            diff = ((offset+i)%len_alphabet) - offset
+            print(chr(ord(c) + diff), end = "")
         else: # Not alpha. (Thus might be numeric)
             print(c, end = "")
     print() # include a newline for readability
