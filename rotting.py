@@ -8,6 +8,9 @@ for i in range(len_alphabet):
     else:
         print(str(i)+". ", end = "")
     for c in n:
+	# alpha chars only are changed by rot
+	# so find alpha chars first and only change those.
+	# but then we have to decide if it's upper or lower case
         if c.isalpha():
             if c.isupper(): # Uppercase letters
                 print(chr((ord(c)-ord('A')+i)%len_alphabet+ord('A')), end = "")
