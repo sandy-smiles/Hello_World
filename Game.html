@@ -1,0 +1,118 @@
+<html>
+<head>
+	<title>GPN | Cookie Clicker</title>
+</head>
+
+<body style="background-color: lightgrey;">
+	<center>
+		<h1>GPN is awesome</h1>
+		<p id="score">Score: 0</p>
+		<p><button id="autoclick">Auto-Click</button></p>
+		<p><button id="autostop">Stop-Auto</button></p>
+		<img style='cursor: pointer;' id="cookie" src="http://goo.gl/idxQ5E" />
+	</center>
+	<script src="http://goo.gl/qF1T6R"></script>
+		<ul>
+		<li>I like programming.
+		<li>This is awesome
+		<li>The url for the lecture is: tinyurl.com/gpn2014cookie
+		<li>The url for the lecture is: tinyurl.com/gpn2014quiz
+		<li>Actual cookie clicker at: orteil.dashnet.org/cookieclicker/
+		<li>Look up:
+		<ul>
+		<li>NCSS
+		<li>Anita Borg
+		<li>CS Unplugged
+		<li>Engineers Australia Honeywell Comp
+		</ul>
+		</ul>
+	<script>
+		console.log('Hello, GPN!');
+	</script>
+    <script>	
+	auto = false;
+	if (auto = true) {
+      setInterval(function() {
+        $('#cookie').click();	  
+      }, 100);
+	};
+	
+    $('#autoclick').click(function() {
+	  auto = true;
+	  //alert("Auto is now on!");
+    });
+	
+	$('#autostop').click(function() {
+	  auto = false;
+	  //alert("You have clicked the auto stop.");
+    });
+    score = 0;
+	auto=false;
+    $('#cookie').click(function() {
+		if (auto==true) {
+			score = score + 1;
+			  console.log('Cookie Clicked ' + score + ' times!');
+			//  score = score + 1;
+			  $('#score').text('Score: ' + score);
+			  if (score%100 == 1 && score != 1) {
+				plus_text = $('<p>AMAZING</p>');
+			  } else if (score%10 == 1 && score != 1) {
+				plus_text = $('<p>WELL DONE</p>');
+			  } else {
+				plus_text = $('<p>YAY!</p>');
+			  }
+			  
+			  plus_text.css({
+				'position': 'absolute',
+				'top': Math.random() * ($(window).height() - 50),
+				'left': Math.random() * ($(window).width() - 50),
+				'font-size': '30px'
+			  });
+			  $('body').append(plus_text);
+			  plus_text.fadeOut(1000, function() {
+				$(this).remove();
+			  });
+			  
+			  
+			  plus_one_text = $('<p>+1</p>');
+			  plus_one_text.css({
+				'position': 'absolute',
+				'top': Math.random() * ($(window).height() - 50),
+				'left': Math.random() * ($(window).width() - 50),
+				'font-size': '30px'
+			  });
+			  $('body').append(plus_one_text);
+			  plus_one_text.fadeOut(1000, function() {
+				$(this).remove();
+			  });
+		} else {
+			
+	    };
+    });
+	</script>
+
+	
+	<p>
+    <center>
+      <h1>Question 1</h1>
+	  <img height=15 width=15 src="http://goo.gl/ZtfMnt">
+      Is GPN awesome?
+	  <img height=15 width=15 src="http://goo.gl/ZtfMnt">
+      <p><input type="text" id="answer"></p>
+		<p><button id="submit">Submit</button></p>
+	</center>
+
+	<script src="http://goo.gl/qF1T6R"></script>
+	<script>
+      console.log('Hello, GPN!');
+    </script>
+    <script>
+      $('#submit').click(function() {
+        answer_two = $('#answer').val();
+        console.log(answer_two);
+      });
+    </script>
+	
+	
+</body>
+</html>
